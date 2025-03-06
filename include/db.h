@@ -14,13 +14,21 @@ private:
 	string password;
 	bool connected = false;
 	static Database* instance;
+	
+	Database(string DB, string UN, string PW) :
+		db{ DB }, username{ UN }, password{ PW }
+	{}
+
+	~Database()
+	{
+		if (connectionStatus())
+		{
+			cout << "Disconnect connection" << endl;
+			connected = false;
+		}
+	}
 
 public:
-	//constructor that helps creating instance of db(e.g. sales.db) accepts name of the database, username, password. 
-	Database(string DB, string UN, string PW);
-
-	//destructor that disconnects the connection if connected.
-	~Database();
 
 	//"getInstance" that creates and returns the instance of the database. 
 	// If called first time it sets the username and password. 
