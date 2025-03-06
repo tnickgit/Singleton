@@ -39,12 +39,11 @@ public:
 	//ToDo
 	static Database* getInstance(string DB, string UN, string PW)
 	{
-		if (instance == nullptr)
+		if (!instance)
 		{
 			instance = new Database(DB, UN, PW);
 		}
-		else if (instance->db == DB || instance->username == UN || instance->password == PW)
-		{
+		else if (instance->db != DB || instance->username != UN || instance->password != PW) {
 			throw std::runtime_error("invalid database name, username or password");
 		}
 
