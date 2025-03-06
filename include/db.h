@@ -71,12 +71,12 @@ public:
 	void operator delete(void* ptr);
 
 	//set_username and get_username for username
-	string getUsername() const;
-	void setUsername(string newUN);
+	string get_username() const;
+	void set_username(string newUN);
 
 	//set_password and get_password for password.
-	string getPassword() const;
-	void setPassword(string newPW);
+	string get_password() const;
+	void set_password(string newPW);
 
 	//The static "resetInstance" as defined below.
 	static void resetInstance();

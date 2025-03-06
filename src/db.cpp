@@ -8,17 +8,17 @@ Database* Database::instance = nullptr;
 
 void Database::connect()
 {
-    connected = true;
+    isConnected = "true";
 }
 
 void Database::disconnect()
 {
-    connected = false;
+    isConnected = "false";
 }
 
 bool Database::connectionStatus()
 {
-    return connected;
+    return isConnected == "true";
 }
 
 void* Database::operator new(size_t size)
@@ -35,22 +35,22 @@ void Database::operator delete(void* ptr)
     free(ptr);
 }
 
-string Database::getUsername() const
+string Database::get_username() const
 {
     return username;
 }
 
-void Database::setUsername(string newUN)
+void Database::set_username(string newUN)
 {
     this->username = newUN;
 }
 
-string Database::getPassword() const
+string Database::get_password() const
 {
     return password;
 }
 
-void Database::setPassword(string newUN)
+void Database::set_password(string newUN)
 {
     this->password = newUN;
 }
