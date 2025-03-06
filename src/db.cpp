@@ -4,18 +4,7 @@
 
 Database* Database::instance = nullptr;
 
-Database::Database(string DB, string UN, string PW) :
-    db{ DB }, username{ UN }, password{PW}
-{}
 
-Database::~Database()
-{
-    if (connectionStatus())
-    {
-        cout << "Disconnect connection" << endl;
-        connected = false;
-    }
-}
 
 void Database::connect()
 {
