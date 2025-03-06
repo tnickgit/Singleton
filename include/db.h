@@ -12,7 +12,7 @@ private:
 	string db;
 	string username;
 	string password;
-	bool isConnected = false;
+	string connected = "false";
 	static Database* instance;
 	
 	Database(string DB, string UN, string PW) :
@@ -21,10 +21,10 @@ private:
 
 	~Database()
 	{
-		if (connectionStatus())
+		if (isConnected())
 		{
 			cout << "Disconnect connection" << endl;
-			isConnected = false;
+			connected = "false";
 		}
 	}
 
@@ -58,7 +58,7 @@ public:
 	void disconnect();
 
 	// retrun status of connected true/false (return bool)
-	bool connectionStatus();
+	bool isConnected();
 
 	//overload the new operator that allocates memory using malloc 
 	// of given size and returns pointer of type void and prints " overloaded new " 
