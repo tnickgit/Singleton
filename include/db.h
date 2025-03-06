@@ -12,7 +12,7 @@ private:
 	string db;
 	string username;
 	string password;
-	bool connected = false;
+	bool isConnected = false;
 	static Database* instance;
 	
 	Database(string DB, string UN, string PW) :
@@ -24,7 +24,7 @@ private:
 		if (connectionStatus())
 		{
 			cout << "Disconnect connection" << endl;
-			connected = false;
+			isConnected = false;
 		}
 	}
 

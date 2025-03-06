@@ -8,17 +8,17 @@ Database* Database::instance = nullptr;
 
 void Database::connect()
 {
-    isConnected = "true";
+    isConnected = true;
 }
 
 void Database::disconnect()
 {
-    isConnected = "false";
+    isConnected = false;
 }
 
 bool Database::connectionStatus()
 {
-    return isConnected == "true";
+    return isConnected;
 }
 
 void* Database::operator new(size_t size)
